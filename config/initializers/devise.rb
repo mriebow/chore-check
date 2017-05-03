@@ -7,7 +7,8 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key =
-  # 'a697a0610a361d7880eb8071d068a78cf0616dd6f2adeba3b5c5adc5ace430bf4884d09c592ed
+  # 'a697a0610a361d7880eb8071d068a78cf0616dd6f2adeba3b5c5adc5ace430bf4884d09c
+  # 592ed
   # 7e405ffbac69631a21f98fac8ce3a21cbfae33f945ee8e55f0e'
 
   # ==> Mailer Configuration
@@ -15,7 +16,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender =
-  'please-change-me-at-config-initializers-devise@example.com'
+    'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -52,7 +53,8 @@ Devise.setup do |config|
   # config.request_keys = []
 
   # Configure which authentication keys should be case-insensitive.
-  # These keys will be downcased upon creating or modifying a user and when used
+  # These keys will be downcased upon creating or modifying a user and when
+  # used
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [:email]
 
@@ -63,7 +65,8 @@ Devise.setup do |config|
   config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
-  # It can be set to an array that will enable params authentication only for the
+  # It can be set to an array that will enable params authentication only for
+  # the
   # given strategies, for example, `config.params_authenticatable =
   # [:database]` will
   # enable it only for database (email + password) authentication.
