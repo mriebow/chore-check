@@ -35,12 +35,21 @@ RSpec.configure do |config|
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
-  # This block must be here, do not combine with the other `before(:each)`block.
-  # This makes it so Capybara can see the database.
+#   # This block must be here, do not combine with the other `before(:each)`block.
+#   # This makes it so Capybara can see the database.
   config.before(:each) do
     DatabaseCleaner.start
   end
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+end
+
+require 'shoulda/matchers'
+
+  Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+  with.test_framework :rspec
+  with.library :rails
   end
 end
