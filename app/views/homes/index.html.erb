@@ -1,0 +1,11 @@
+<div class= "row">
+  <h1> Welcome to </h1>
+  <div class = "home large-8 large-centered columns">
+    <%=image_tag ("home_logo.png") %>
+  </div>
+  <br/>
+  <div id= "home_links">
+    <%= link_to 'Login', new_user_session_path %>
+    <%= link_to 'Sign Up', new_user_registration_path %>
+  </div>
+</div>
