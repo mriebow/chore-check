@@ -18,12 +18,13 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-      Group.find(params[:id]).destroy
-      flash[:success] = "User deleted"
-      redirect_to (@user), notice: "User Account Deleted"
+    Group.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to @user, notice: "User Account Deleted"
   end
 
   private
+  
   def group_params
     params.require(:group).permit(:name)
   end
