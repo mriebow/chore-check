@@ -5,4 +5,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :created_groups, class_name: "Group", foreign_key: "creator_id"
+  has_many :members, class_name: "Group"
 end
