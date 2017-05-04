@@ -1,0 +1,10 @@
+<div class="group-details">
+  <h1><%= @group.name %></h1>
+  <div class="group-platform">
+    <h4>Group Creator: <%= @user.username %></h4>
+    <% if @group.creator_id == @user.id %>
+      <%=link_to "Delete", @group, method: :delete, data: {confirm: "You sure?"}%>
+    <%end%>
+  </div>
+</div>
+<%= link_to "Profile", @user %>

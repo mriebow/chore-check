@@ -1,14 +1,15 @@
 
 <div class="profile-info">
-  <% if current_user.admin? === true %>
-    <h1><%= @user.username %>'s Profile (Parent) </h1>
-  <%else%>
-    <h1><%= @user.username %>'s Profile</h1>
-  <%end%>
+  <h1><%= @user.username %>'s Profile</h1>
 
   <h3><%= @user.email %></h3>
+    <h4>Your Groups:</h4>
+    <ul>
+    <% @groups.each do |group| %>
+      <li><%= link_to group.name, group%></li>
+    <%end%>
+  </ul>
 
+    <%= link_to 'Create Group', new_group_path %><br/>
     <%= link_to 'Edit Your Profile', edit_user_registration_path %>
-
-
 </div>
