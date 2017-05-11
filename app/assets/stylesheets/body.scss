@@ -11,12 +11,12 @@ span {
 }
 
 a.button {
-  background: #A9C942;
+  background: #a9c942;
   color: #fafafa;
   box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   cursor: pointer;
-  border: none;
+  border: 0;
   height: 60px;
   width: 100px;
   padding: 0 14px;
@@ -24,7 +24,7 @@ a.button {
 }
 
 a.button:hover {
-  background: #F7AD1A;
+  background: #F7ad1a;
   color: #fafafa;
 }
 
