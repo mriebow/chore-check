@@ -9,9 +9,6 @@
     <%end%>
   </ul>
 
-
-
-    <%= link_to 'Add a Chore', new_chore_path %><br/>
     <% if current_user.id == @user.id %>
       <%= link_to 'Create Group', new_group_path %><br/>
       <%= link_to 'Edit Your Profile', edit_user_registration_path %>

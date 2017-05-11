@@ -1,7 +1,16 @@
 <div class="chore-details">
   <h1><%= @chore.task %></h1>
+  <h4>Assigned to: <%=@chore.assignment %></h4>
   <h4>Deadline: <%= @chore.deadline %></h4>
   <%= form_for [@chore] do |f| %>
-  <h4>Complete?</h4><%= f.check_box :status %>
+    <h4>Status:</h4>
+    <div class="field">
+    <%= f.label "Status", class:"hidden" %> <br />
+    <%= f.check_box :status, onclick: "$('#chores').submit()" %> <br />
+    </div>
+    <div class="actions">
+    <%= f.submit "Submit" %>
+    </div>
   <%end%>
+  <%= link_to "Delete Chore", @chore, method: :delete, data: { confirm: "You sure?" } %>
 </div>

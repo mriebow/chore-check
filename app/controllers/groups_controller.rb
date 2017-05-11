@@ -32,7 +32,6 @@ class GroupsController < ApplicationController
 
   def show
     @users = User.all
-    # @user = User.find(params[:id])
     @group = Group.find(params[:id])
     @membership = @group.users
     @chores = Chore.all
