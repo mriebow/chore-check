@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
-
+gem 'pg_search'
 group :test do
   gem 'coveralls', require: false
   gem 'database_cleaner'

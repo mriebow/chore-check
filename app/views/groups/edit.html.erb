@@ -1,0 +1,7 @@
+<h1> Edit Group To Add Member </h1>
+  <%= form_tag group_path(@group), method: :put do %>
+  <%= select_tag 'user', options_for_select(@users.collect{ |u| [u.username]}), include_blank: true%>
+  <div class='field'>
+    <%= submit_tag value="Add member" %>
+  </div>
+  <% end %>

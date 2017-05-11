@@ -1,0 +1,7 @@
+<div class="chore-details">
+  <h1><%= @chore.task %></h1>
+  <h4>Deadline: <%= @chore.deadline %></h4>
+  <%= form_for [@chore] do |f| %>
+  <h4>Complete?</h4><%= f.check_box :status %>
+  <%end%>
+</div>
