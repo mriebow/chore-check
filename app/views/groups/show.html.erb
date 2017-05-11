@@ -7,7 +7,7 @@
     <%end%>
   <%end%>
   <h4>Group Members:</h4>
-    <% @group.users.each do |user| %>
+    <% @membership.each do |user| %>
       <li><%= link_to user.username, user_path(user) %></li>
     <% end %>
   </div>
@@ -16,13 +16,19 @@
 <h4>Group Chores:</h4>
   <ul>
   <% @chores.each do |chore| %>
-    <li><%= link_to chore.task, chore%></li>
+    <li><%= link_to chore.task, chore%>:
+      <% if chore.status == false %>
+        <p> Incomplete </p>
+      <%else%>
+        <p> Complete </p>
+      <%end%>
+    </li>
   <%end%>
 </ul>
 
 
   <% if current_user.id == @group.creator_id %>
-    <%= link_to "Add a Member", edit_group_path(@group) %>
-    <br/>
+    <%= link_to 'Add a Chore', new_chore_path %><br/>
+    <%= link_to "Add a Member", edit_group_path(@group) %><br/>
     <%= link_to "Delete Group", @group, method: :delete, data: { confirm: "You sure?" } %>
   <%end%>
