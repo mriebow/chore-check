@@ -1,5 +1,4 @@
 class ChoresController < ApplicationController
-
   def create
     @chore = Chore.new(chore_params)
     # @group = User.find(params[:group_id])
@@ -25,7 +24,6 @@ class ChoresController < ApplicationController
   def new
     @chore = Chore.new
   end
-
 
   def show
     @chore = Chore.find(params[:id])
