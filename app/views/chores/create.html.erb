@@ -1,0 +1,9 @@
+<div class="chore-details">
+  <h1><%= @chore.task %></h1>
+  <h4>Deadline: <%= @chore.deadline %></h4>
+  <% if @chore.status == false %>
+    <h4> Status: Incomplete </h4>
+  <%else%>
+    <h4> Status: Complete </h4>
+  <%end%>
+</div>

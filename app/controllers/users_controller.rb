@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 
   def show
     if user_signed_in?
-      @user = User.find(current_user.id)
-      @groups = Group.find(current_user.created_group_ids)
+      @users = User.all
+      @user = User.find(params[:id])
+      @groups = Group.all
+      @chores = Chore.all
     else
       root_path
     end
