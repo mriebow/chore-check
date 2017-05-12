@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="animate.min.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -18,14 +19,14 @@
         <% if user_signed_in? %>
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
-                <li><%=image_tag ("home_logo.png") %></li>
+                <li class= "header-image animated"><%=image_tag ("header.png") %></li>
               </ul>
             </div>
 
         <div class="top-bar-right">
           <ul class="dropdown menu" data-dropdown-menu>
-              <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-              <li><%= link_to('Profile', current_user)%></li>
+            <li><%= link_to('Profile', current_user)%></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
             </ul>
         </div>
         <% end %>

@@ -2,15 +2,23 @@
   <h1><%= @chore.task %></h1>
   <h4>Assigned to: <%=@chore.assignment %></h4>
   <h4>Deadline: <%= @chore.deadline %></h4>
+  <h4>Status:
+    <% if @chore.status == false %>
+      <p> Incomplete </p>
+    <%else%>
+      <p> Complete </p>
+    <%end%>
+  </h4>
   <%= form_for [@chore] do |f| %>
-    <h4>Status:</h4>
-    <div class="field">
-    <%= f.label "Status", class:"hidden" %> <br />
-    <%= f.check_box :status, onclick: "$('#chores').submit()" %> <br />
+</div>
+<div class="check_box">
+    <div class="css-checkbox">
+      <%= f.label "css-label", class:"hidden" %> <br />
+      <label>Check once complete:<%= f.check_box :status, onclick: "$('#chores').submit()" %></label> <br />
     </div>
     <div class="actions">
     <%= f.submit "Submit" %>
     </div>
   <%end%>
-  <%= link_to "Delete Chore", @chore, method: :delete, data: { confirm: "You sure?" } %>
 </div>
+  <%= link_to "Delete Chore", @chore, method: :delete, data: { confirm: "You sure?" } %>

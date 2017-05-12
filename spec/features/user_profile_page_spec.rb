@@ -10,7 +10,6 @@ feature 'user Profile page' do
     click_button 'Log in'
 
     expect(page).to have_content jerry.username
-    expect(page).to have_content "Your Groups:"
     expect(page).to have_link "Create Group"
     expect(page).to have_link "Edit Your Profile"
   end
