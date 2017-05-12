@@ -13,7 +13,6 @@
     <% @membership.each do |user| %>
     <div class="group-members">
       <p><%= link_to user.username, user_path(user) %></p>
-      <%=image_tag ("#{user.profile_picture}")%>
     </div>
     <% end %>
 </div>
