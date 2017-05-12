@@ -1,34 +1,47 @@
-<div class="group-details">
+<div class="group-title">
   <h1><%= @group.name %></h1>
-  <div class="group-platform">
+</div>
+<div class="group-info">
   <% @users.each do |user| %>
     <% if user.id == @group.creator_id%>
       <h4>Group Creator:<%=user.username%></h4>
     <%end%>
   <%end%>
-  <h4>Group Members:</h4>
-    <% @membership.each do |user| %>
-      <li><%= link_to user.username, user_path(user) %></li>
-    <% end %>
-  </div>
+  <h3>Group Members:</h3>
 </div>
-
-<h4>Group Chores:</h4>
+<div class="row animated fadeInRightBig">
+    <% @membership.each do |user| %>
+    <div class="group-members">
+      <p><%= link_to user.username, user_path(user) %></p>
+      <%=image_tag ("#{user.profile_picture}")%>
+    </div>
+    <% end %>
+</div>
+<div class="group-chores">
+  <h3>Group Chores:</h3>
+</div>
+<div class="chore-list animated fadeInRightBig">
   <ul>
   <% @chores.each do |chore| %>
-    <li><%= link_to chore.task, chore%>:
       <% if chore.status == false %>
-        <p> Incomplete </p>
+        <li><%= link_to chore.task, chore%>:
+          <div class="incomplete">
+           Incomplete </li>
+          </div>
       <%else%>
-        <p> Complete </p>
+        <li><%= link_to chore.task, chore%>:
+          <div class="complete">
+           Complete </li>
+          </div>
       <%end%>
     </li>
   <%end%>
-</ul>
-
-
+  </ul>
+</div>
+<div class="buttons animated fadeInUpBig">
   <% if current_user.id == @group.creator_id %>
-    <%= link_to 'Add a Chore', new_chore_path %><br/>
-    <%= link_to "Add a Member", edit_group_path(@group) %><br/>
-    <%= link_to "Delete Group", @group, method: :delete, data: { confirm: "You sure?" } %>
+    <%= link_to 'Add Chore', new_chore_path, class: "button" %><br/>
+    <%= link_to "Add a Member", edit_group_path(@group), class: "button" %><br/>
+    <%= link_to "Delete Group", @group, method: :delete, data: { confirm: "You sure?" }, class: "button" %>
   <%end%>
+</div>

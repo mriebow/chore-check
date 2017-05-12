@@ -1,5 +1,9 @@
-<h1>Enter Chore</h1>
+<div class="chore_title">
+  <h1>Enter Chore</h1>
+</div>
 
+<div class="row">
+  <div class="new_chore_form">
 <%= form_for [@user, @chore] do |f| %>
 
 <% if @chore.errors.any? %>
@@ -35,3 +39,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+  </div>
+</div>
