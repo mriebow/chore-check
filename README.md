@@ -6,6 +6,7 @@ Chore Check is a chore assignment app. It enables users to create groups, add us
 
 ## Heroku Link
 Check out the app on Heroku! https://chore-check.herokuapp.com
+Test account: email: dad@aol.com  password: password
 
 ## List of Features
 Chore Check allows Users to create a group and assign chores to the other users.
