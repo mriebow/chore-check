@@ -2,6 +2,8 @@ require "pg_search"
 class User < ApplicationRecord
   include PgSearch
 
+mount_uploader :profile_photo, ProfilePhotoUploader
+
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
   validates :username, presence: true, uniqueness: true
